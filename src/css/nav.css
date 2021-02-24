@@ -1,0 +1,14 @@
+.nav{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    background: #96E8E2;
+}
+
+.nav_logo{
+    width: 100px;
+    object-fit: contain;
+}
+

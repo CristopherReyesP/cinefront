@@ -1,6 +1,7 @@
-
-import './App.css';
+import { InfoCard } from './components/InfoCard';
 import { MovieCards } from './components/MovieCards';
+import { Nav } from './components/Nav';
+import { PeliculasProvider } from './context/PeliculasContext';
 
 
 function App() {
@@ -9,7 +10,11 @@ function App() {
 
   return (
     <div className="App">
-      <MovieCards /> 
+      <PeliculasProvider>
+        <Nav />
+        <MovieCards />
+        <InfoCard />
+      </PeliculasProvider>
     </div>
   );
 }

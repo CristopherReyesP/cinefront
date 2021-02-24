@@ -1,43 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { fetchtrending } from '../helpers/fetch';
+import React, { useContext } from 'react';
+import { PeliculasContext } from '../context/PeliculasContext';
+import { scrollToBottomAnimated } from '../components/scrollToBottom';
 import '../css/movieCards.css';
 
 export const MovieCards = () => {
+    const { pelis, setPeliculaSeleccionada } = useContext(PeliculasContext);
+    const baseUrl = "https://image.tmdb.org/t/p/original/";
 
-    const [pelis, setPelis] = useState([]);
-    const baseUrl = "https://image.tmdb.org/t/p/original/"
-    useEffect(() => {
-        const imprimir = async () => {
-            const { results } = await fetchtrending();
-            console.log(results)
-            const peliculas = results.map(r => (
-                {
-                    id: r.id,
-                    titulo: r.title,
-                    overview: r.overview,
-                    img: r.poster_path
-                }
-            ));
-            setPelis(peliculas);
+    const enviarPeli = (p) => {
+        setPeliculaSeleccionada({
+            id: p.id,
+            titulo: p.titulo,
+            overview: p.overview,
+            promedio: p.promedio,
+            lanzamiento: p.lanzamiento,
+            img: `${baseUrl}${p.img}`,
+            bac:`${baseUrl}${p.bac}`,
+        })
+        scrollToBottomAnimated('scrollAnimated');
+    }
 
-        }
-        imprimir();
-    }, []);
-
-    console.log(pelis)
     return (
-        <div className="fila">
-
+        <div className="fila" >
             {pelis.map((p) => (
-            <div key={p.id}>
- {/*                <h3>{p.titulo}</h3>
-                <p>{p.overview}</p> */}
-                <img
-                    className="peli_poster"
-                    src={`${baseUrl}${p.img}`} alt={p.titulo} />
-
-            </div>
-        ))}
+                <div key={p.id} >
+                    <img
+                        className="peli_poster"
+                        onClick={ () => enviarPeli(p)}
+                        src={`${baseUrl}${p.img}`} alt={p.titulo} />      
+                </div>
+            ))}
         </div>
     )
 }

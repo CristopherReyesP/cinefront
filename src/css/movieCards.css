@@ -3,21 +3,47 @@
     margin: 0;
 }
 .fila{
+    width: 100%;
     display: flex;
     overflow-y: hidden;
     overflow-x: scroll;
     padding: 20px;
 }
+
 .fila::-webkit-scrollbar{
-    display: none;
+    height: 10px;   
 }
+
+.fila::-webkit-scrollbar-thumb {
+    background: rgb(214, 214, 214);
+    border-radius: 4px;
+}
+
+.fila::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
 .peli_poster{
     object-fit: contain;
-    width: 100px;
-    max-height: 200px;
-    margin-right: 10px;
+    width: 134px;
+    max-height: 205px;
+    margin-right: 20px;
     transition: transform 450ms;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 .peli_poster:hover{
     transform: scale(1.08);
+    filter: brightness(125%);
+}
+
+.nombre{
+    margin-top: 5px;
+}
+
+.nombre:hover{
+    color: #3AE7DA;
+    transform: scale(1.08);
+    cursor: pointer;
 }
