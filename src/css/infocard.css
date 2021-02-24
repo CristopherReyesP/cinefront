@@ -9,26 +9,12 @@
     padding: 20px;
     width: 100%;
 }
-@media (max-width: 600px){
-    .infoContainer{
-        display: block;
-        overflow: hidden;
-        position: relative;
-        background-color: #bbf8f4;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        padding: 20px;
-        width: 100%;
-    }
-}
-.infoContainer h1 { 
-    position: relative;
-    z-index: 2;
-}
+
 .informacion{
     display:block;
     margin-right: 20px;
-    padding: 100px 20px 80px 20px;
+    padding: 20px 20px 80px 20px;
+    font-size: large;
 }
 .imagenFondo{
     position: absolute;
@@ -41,9 +27,9 @@
 
 @supports(object-fit: cover){
     .imagenFondo{
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
     }
 }
 .posterContainer{
@@ -56,4 +42,28 @@
     max-height: 367px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 600px){
+    .infoContainer{
+        display: block;
+        overflow: hidden;
+        position: relative;
+        background-color: #bbf8f4;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .posterContainer{
+        padding: 20px 40px 0px 40px;
+        z-index: 5;
+    }
+
+    .informacion{
+
+        display:block;
+        margin-right: 20px;
+        padding: 40px 30px 40px 30px;
+    }
 }

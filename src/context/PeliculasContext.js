@@ -5,7 +5,7 @@ export const PeliculasContext = createContext ();
 const initialState = {
     id:"1111",
     titulo:"Seleccione una Pelicula",
-    overview:"Default",
+    overview:"",
     promedio:"10",
     lanzamiento:"2021",
     img:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cine.Ar_logo.svg/1280px-Cine.Ar_logo.svg.png",
