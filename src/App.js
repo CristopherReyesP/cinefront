@@ -1,19 +1,12 @@
-import { InfoCard } from './components/InfoCard';
-import { MovieCards } from './components/MovieCards';
-import { Nav } from './components/Nav';
 import { PeliculasProvider } from './context/PeliculasContext';
-
+import { AppRouter } from './router/AppRouter';
 
 function App() {
-
-
 
   return (
     <div className="App">
       <PeliculasProvider>
-        <Nav />
-        <MovieCards />
-        <InfoCard />
+        <AppRouter />
       </PeliculasProvider>
     </div>
   );

@@ -7,7 +7,7 @@ const initialState = {
     titulo:"Seleccione una Pelicula",
     overview:"",
     promedio:"10",
-    lanzamiento:"2021",
+    lanzamiento:"1",
     img:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cine.Ar_logo.svg/1280px-Cine.Ar_logo.svg.png",
     bac:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Cine.Ar_logo.svg/1280px-Cine.Ar_logo.svg.png",
 }
